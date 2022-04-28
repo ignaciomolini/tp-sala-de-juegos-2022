@@ -1,10 +1,11 @@
-.abs-center {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
+  width: 90vw;
+  height: 90vh;
 }
 
-.tam-tit{
-    font-size: 4.5rem;
+img{
+    width: 60vh;
 }
