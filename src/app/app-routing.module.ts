@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './pages/error/error.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { EncuestaComponent } from './encuesta/encuesta.component';
+import { ErrorComponent } from './error/error.component';
+import { HomeComponent } from './home/home.component';
+import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
@@ -24,8 +15,24 @@ const routes: Routes = [
     component: QuienSoyComponent
   },
   {
-    path: '',
-    redirectTo: 'home',
+    path: 'encuesta',
+    component: EncuestaComponent
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'juegos',
+    loadChildren: () => import('./juegos/juegos.module').then(m => m.JuegosModule)
+  },
+  {
+    path: 'puntajes',
+    loadChildren: () => import('./puntajes/puntajes.module').then(m => m.PuntajesModule)
+  },
+  {
+    path: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {

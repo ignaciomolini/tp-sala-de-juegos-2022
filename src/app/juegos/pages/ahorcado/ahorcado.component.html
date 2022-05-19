@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <div class="card bg-deg">
+    <div class="card-header text-center bg-deg2 rounded pt-3">
+      <h1>Ahorcado</h1>
+    </div>
+
+    <div *ngIf="juego" class="card-body bg-white flex-col">
+      <div class="card mb-3 flex-row">
+        <img
+          src="/assets/images/ahorcado/ahorcado{{ numeroFallos }}.png"
+          width="250vw"
+          alt="colgado"
+        />
+        <span class="text-dark palabra">{{ palabraConGuiones }}</span>
+      </div>
+      <div class="teclado">
+        <div class="fila">
+          <div *ngFor="let letra of primeraFila" class="tecla tecla-letra">
+            <button
+              type="button"
+              class="btn"
+              (click)="evaluarLetra(letra)"
+              id="letra-{{ letra }}"
+            >
+              {{ letra }}
+            </button>
+          </div>
+        </div>
+        <div class="fila">
+          <span *ngFor="let letra of segundaFila" class="tecla tecla-letra">
+            <button
+              type="button"
+              class="btn"
+              (click)="evaluarLetra(letra)"
+              id="letra-{{ letra }}"
+            >
+              {{ letra }}
+            </button>
+          </span>
+        </div>
+        <div class="fila">
+          <span *ngFor="let letra of terceraFila" class="tecla tecla-letra">
+            <button
+              type="button"
+              class="btn"
+              (click)="evaluarLetra(letra)"
+              id="letra-{{ letra }}"
+            >
+              {{ letra }}
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="perdio"
+      class="card-body bg-white d-flex align-items-center flex-column justify-content-center"
+    >
+      <div class="pb-4">
+        <img
+          src="http://pngimg.com/uploads/game_over/game_over_PNG42.png"
+          width="400vw"
+          alt="perdiste"
+        />
+      </div>
+      <div class="pt-4">
+        <button type="button" class="btn-lg mx-3" (click)="volverAJugar()">
+          Volver a jugar
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngIf="gano"
+      class="card-body bg-white d-flex align-items-center flex-column justify-content-center"
+    >
+      <div class="pt-4 text-center">
+        <div class="col">
+          <img
+            src="https://www.pngkey.com/png/full/65-651469_you-win-tan.png"
+            width="500vw"
+            alt="ganaste"
+          />
+        </div>
+        <div class="col pt-3">
+          <img
+            src="https://www.redguides.com/images/trophy.gif"
+            width="100vw"
+            alt="ganaste-trofeo"
+          />
+        </div>
+      </div>
+      <div class="p-5">
+        <h2 class="text-dark m-0">Vidas restantes: {{ vidas }}</h2>
+      </div>
+      <div class="p-3">
+        <button type="button" class="btn-lg mx-3" (click)="volverAJugar()">
+          Volver a jugar
+        </button>
+        <button type="button" class="btn-lg mx-3" (click)="guardarPuntaje()">
+          Guardar puntaje
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

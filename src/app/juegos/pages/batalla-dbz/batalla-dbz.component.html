@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="card card-size bg-deg">
+    <div class="card-header text-center bg-deg2 rounded pt-3">
+      <h1>Batalla drangon ball z</h1>
+    </div>
+
+    <div
+      class="card-body card-body-bg rounded d-flex align-items-center justify-content-end flex-column"
+    >
+      <img id="jugador" src="{{ jugador }}" width="200px" alt="" />
+      <img id="oponente" src="{{ oponente }}" width="200px" alt="" />
+      <div [ngSwitch]="estado">
+        <div *ngSwitchCase="'inicio'">
+          <button
+            id="btn-iniciar"
+            type="button"
+            class="btn-lg mx-3"
+            (click)="iniciarBatalla()"
+          >
+            Iniciar batalla
+          </button>
+        </div>
+        <div *ngSwitchCase="'pelea'">
+          <h1>
+            <span class="badge bg-primary">NIVEL: {{ nivel }}</span>
+          </h1>
+        </div>
+        <div *ngSwitchCase="'ganaste'" class="text-center">
+          <h1><span class="badge bg-primary">GANASTE</span></h1>
+          <h2>
+            <span class="badge bg-primary">SIGUIENTE NIVEL: {{ nivel }}</span>
+          </h2>
+          <button
+            id="btn-iniciar"
+            type="button"
+            class="btn-lg mx-3"
+            (click)="iniciarBatalla()"
+          >
+            Siguiente batalla
+          </button>
+        </div>
+        <div *ngSwitchCase="'perdiste'" class="text-center">
+            <h1><span class="badge bg-primary">PERDISTE</span></h1>
+            <h2>
+              <span class="badge bg-primary">NIVEL ALCANZADO: {{ nivel }}</span>
+            </h2>
+            <button
+              id="btn-iniciar"
+              type="button"
+              class="btn-lg mx-3"
+              (click)="reset()"
+            >
+              Volver a jugar
+            </button>
+            <button
+              id="btn-iniciar"
+              type="button"
+              class="btn-lg mx-3"
+              (click)="guardarPuntaje()"
+            >
+              Guardar resultado
+            </button>
+          </div>
+
+        <!-- <div>
+          <div class="p-3 text-center">
+            <img
+              src="https://image.spreadshirtmedia.net/image-server/v1/designs/185487728,width=178,height=178.png"
+              width="300vw"
+              alt="perdiste"
+            />
+            <h2><span class="badge bg-primary">Puntaje obtenido:</span></h2>
+          </div>
+          <div class="p-4">
+            <button type="button" class="btn-lg mx-3">
+              Volver a jugar
+            </button>
+            <button type="button" class="btn-lg mx-3">Guardar puntaje</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

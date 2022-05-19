@@ -1,0 +1,48 @@
+.card-size {
+  width: 70%;
+  height: 80%;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88vh;
+}
+
+.card-body-bg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5760269145bf21440773e26c/1589843351607-83BW4UJJ8UOGV4XAWN9S/questionss.jpg?format=1500w);
+}
+
+.card-bg{
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://img.freepik.com/free-vector/puzzle-riddles-hand-drawn-seamless-pattern-with-crossword-puzzle-maze-brain-chess-piece-light-bulb-design-math-quiz-vector-illustration-doodle-style-square-copybook-background_192280-671.jpg?w=826);
+}
+
+.card-header{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.card-body{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 650px) {
+  img {
+    width: 50vw;
+  }
+}
+
+button:hover {
+  background-color: rgb(142, 142, 142);
+  transition: 0.5s;
+}
+
+button:active {
+  background-color: rgb(104, 104, 104);
+  transition: 0.5s;
+  transform: scale(1.03);
+}
+

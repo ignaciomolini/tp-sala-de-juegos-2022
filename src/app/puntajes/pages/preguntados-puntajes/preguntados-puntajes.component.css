@@ -1,0 +1,36 @@
+.card {
+    width: 80vw;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+  
+  table, td{
+      border: 1px solid rgb(39, 39, 39);
+      color: black;
+  }
+  
+  thead{
+      background-color: rgb(132, 131, 136);
+  }
+  
+  tbody{
+      background-color: rgb(191, 183, 202);
+  }
+  
+  @media (max-height: 650px) {
+    .container {
+      height: 75vh;
+    }
+  }
+  
+  @media (max-width: 413px) {
+    .container {
+      height: 75vh;
+    }
+  }
+  

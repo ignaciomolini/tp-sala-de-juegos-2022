@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="card card-size bg-deg">
+    <div class="card-header text-center bg-deg2 rounded pt-3">
+      <h1>Preguntados</h1>
+    </div>
+
+    <div
+      class="card-body card-body-bg rounded d-flex align-items-center justify-content-center flex-column"
+    >
+      <div
+        class="card card-bg p-3"
+        style="width: 20rem"
+        *ngIf="respuestaCorrecta && !perdiste"
+      >
+        <div class="card-header rounded py-3 text-center">
+          <img
+            class="card-img-top"
+            src="{{ respuestaCorrecta.bandera }}"
+            alt="fotoPregunta"
+          />
+          <p class="m-0 pt-2">{{ pregunta }}</p>
+        </div>
+        <div class="card-body rounded mt-2 p-2">
+          <div class="d-grid" *ngFor="let respuesta of respuestas">
+            <button class="m-2" (click)="evaluarRespuesta(respuesta)">
+              {{ respuesta[tipoRespuesta] }}
+              <span *ngIf="tipoRespuesta == 'poblacion'">habitantes</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="perdiste">
+        <div class="p-3 text-center">
+          <img
+            src="https://image.spreadshirtmedia.net/image-server/v1/designs/185487728,width=178,height=178.png"
+            width="300vw"
+            alt="perdiste"
+          />
+          <h2><span class="badge bg-primary">Puntaje obtenido: {{ puntaje }}</span></h2>
+        </div>
+        <div class="p-4">
+          <button type="button" class="btn-lg mx-3" (click)="reset()">
+            Volver a jugar
+          </button>
+          <button type="button" class="btn-lg mx-3" (click)="guardarPuntaje()">Guardar puntaje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+.card {
+  width: 80vw;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.carousel-item {
+  border-radius: 10px;
+  background-image: url("src/assets/images/fondo-menu.jpg");
+  background-position: center;
+  height: 55vh;
+}
+
+#img-cartas{
+  width: 10em;
+  padding-top: 8em;
+}
+
+#img-pregu{
+  width: 10em;
+  padding-top: 5em;
+}
+
+#img-bat{
+  width: 17em;
+  padding-top: 3em;
+}
+
+@media (max-height: 650px) {
+  .container {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 413px) {
+  .container {
+    height: 75vh;
+  }
+}
+
+

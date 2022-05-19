@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="card bg-deg">
+    <div class="card-header text-center bg-deg2 rounded pt-3">
+      <h1>Mayor o Menor</h1>
+    </div>
+
+    <div
+      *ngIf="!juegoTerminado"
+      class="card-body bg-white d-flex align-items-center flex-column"
+    >
+      <div class="p-3 text-center">
+        <h2 class="text-dark">Puntaje: {{ puntaje }}</h2>
+        <img src="{{ carta }}" width="250vw" alt="carta" />
+      </div>
+      <div class="p-3 text-center">
+        <button
+          type="button"
+          class="btn-lg mx-3"
+          (click)="evaluarCarta('menor')"
+        >
+          Menor
+        </button>
+        <button
+          type="button"
+          class="btn-lg mx-3"
+          (click)="evaluarCarta('mayor')"
+        >
+          Mayor
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngIf="juegoTerminado"
+      class="card-body bg-white d-flex align-items-center flex-column justify-content-center"
+    >
+      <div class="p-3 text-center">
+        <img
+          class="mb-5"
+          src="https://www.pinclipart.com/picdir/big/536-5360622_game-over-png-clipart.png"
+          width="300vw"
+          alt="perdiste"
+        />
+        <h2 class="text-dark">Puntaje obtenido: {{ puntaje }}</h2>
+      </div>
+      <div class="p-4">
+        <button type="button" class="btn-lg mx-3" (click)="volverAJugar()">
+          Volver a jugar
+        </button>
+        <button type="button" class="btn-lg mx-3" (click)="guardarPuntaje()">
+          Guardar puntaje
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

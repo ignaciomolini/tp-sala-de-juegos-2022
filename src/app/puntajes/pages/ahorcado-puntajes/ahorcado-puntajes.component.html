@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card bg-deg">
+    <div class="card-header text-center bg-deg rounded pt-3">
+      <h2>Puntajes ahorcado</h2>
+    </div>
+    <div class="card-body text-center">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Posicion</th>
+              <th>Usuario</th>
+              <th>Vidas restantes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let puntaje of arrayPuntajes; let i = index">
+              <td>
+                {{ i + 1 }}
+              </td>
+              <td>
+                {{ puntaje.emailUsuario }}
+              </td>
+              <td>
+                {{ puntaje.vidasRestantes }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

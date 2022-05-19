@@ -1,0 +1,150 @@
+.card-size {
+  width: 70%;
+  height: 80%;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88vh;
+}
+
+.card-body-bg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://i.pinimg.com/736x/ad/86/e2/ad86e24238b3c8e16d3c774ec7880efe.jpg);
+}
+
+.card-bg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://img.freepik.com/free-vector/puzzle-riddles-hand-drawn-seamless-pattern-with-crossword-puzzle-maze-brain-chess-piece-light-bulb-design-math-quiz-vector-illustration-doodle-style-square-copybook-background_192280-671.jpg?w=826);
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.card-body {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 650px) {
+  img {
+    width: 50vw;
+  }
+}
+
+button:hover {
+  background-color: rgb(142, 142, 142);
+  transition: 0.5s;
+}
+
+button:active {
+  background-color: rgb(104, 104, 104);
+  transition: 0.5s;
+  transform: scale(1.03);
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+}
+
+.animacion-jugador {
+  animation-name: mov-jug, rot;
+  animation-duration: 5s;
+}
+
+.animacion-oponente {  
+  animation-name: mov-op, rot;
+  animation-duration: 5s;
+}
+
+#jugador {
+  position: absolute;
+  top: 12rem;
+  left: 4rem;
+}
+
+#oponente {
+  position: absolute;
+  top: 12rem;
+  right: 4rem;
+}
+
+@keyframes mov-jug {
+  0%, 100% {
+    left: 4rem;
+  }
+  25% {
+    left: 8rem;
+  }
+  40% {
+    left: 33rem; 
+  }
+  55% {
+    left: 25rem;
+    top: 5rem;
+  }
+  60% {
+    left: 10rem; 
+    top: 15rem;
+  }
+  70% {
+    left: 41rem;
+    top: 10rem;
+  }
+  75%, 80% {
+    left: 4rem;
+    top: 15rem;
+  }
+  93% {
+    left: 56rem;
+    top: 4rem;
+  }
+}
+
+@keyframes mov-op {
+  0%, 100% {
+    right: 4rem;
+  }
+  25% {
+    right: 8rem;
+  }
+  40% {
+    right: 33rem;
+  }
+  55% {
+    right: 25rem;
+    top: 5rem;
+  }
+  60% {
+    right: 10rem;
+    top: 15rem;
+  }
+  65%, 70% {
+    right: 25rem;
+    top: 10rem;
+  }
+  80% {
+    right: 62rem;
+    top: 15rem;
+  }
+  90%, 93% {
+    right: 10rem;
+    top: 4rem;
+  }
+}
+
+@keyframes rot { 
+  38%, 40%, 42%, 88%, 90%, 92% , 65% , 67%, 69%, 76%, 78%, 80%{
+    -webkit-transform: rotate(0deg);
+  }
+  39%, 91%, 66%, 79% {
+    -webkit-transform: rotate(45deg);
+  }
+  41%, 89% , 68%, 77%{
+    -webkit-transform: rotate(-45deg);
+  }   
+}

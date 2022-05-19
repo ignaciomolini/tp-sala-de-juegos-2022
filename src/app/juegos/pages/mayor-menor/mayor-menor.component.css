@@ -1,0 +1,27 @@
+.card {
+  width: 70%;
+  height: 80%;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88vh;
+}
+
+.card-body {
+  background-position: center;
+  background-size: cover;
+  background-image: url(/assets/images/mayor-menor/fondo.png);
+}
+
+@media (max-width: 650px) {
+  img {
+    width: 50vw;
+  }
+}
+
+button:hover {
+  background-color: rgb(140, 140, 140);
+}

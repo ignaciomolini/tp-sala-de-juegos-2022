@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="card bg-deg">
+      <div class="card-header text-center bg-deg rounded pt-3">
+        <h2>Juegos</h2>
+      </div>
+      <div class="card-body bg-deg">
+        <div
+          id="miCarousel"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#miCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#miCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#miCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#miCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active text-center">
+              <img src="https://reygif.com/media/6/esqueleto-ahorcado-77100.gif" alt="fondo">
+              <div class="carousel-caption">
+                <h3>Ahorcado</h3>
+                <a class="btn btn-primary btn-lg" [routerLink]="['/juegos/ahorcado']"
+                  >Jugar</a
+                >
+              </div>
+            </div>
+            <div class="carousel-item text-center">
+              <img id="img-cartas" src="https://ik.imagekit.io/smdxc0e2g3/userscontent2-endpoint/images/85b41d2e-0362-45c9-9724-f3633ab88357/5a0d37032392341df9ecfcd47d0655c4.gif?tr=w-160,rt-auto" alt="fondo">
+              <div class="carousel-caption">
+                <h3>Mayor o menor</h3>
+                <button
+                  class="btn btn-primary btn-lg"
+                  [routerLink]="['/juegos/mayor-menor']"
+                >
+                  Jugar
+                </button>
+              </div>
+            </div>
+            <div class="carousel-item text-center">
+              <img id="img-pregu" src="https://c.tenor.com/W9hNLcgX3nUAAAAi/sla.gif" alt="fondo">
+              <div class="carousel-caption">
+                <h3>Preguntados</h3>
+                <button
+                  class="btn btn-primary btn-lg"
+                  [routerLink]="['/juegos/preguntados']"
+                >
+                  Jugar
+                </button>
+              </div>
+            </div>
+            <div class="carousel-item text-center">
+              <img id="img-bat" src="https://i.pinimg.com/originals/8d/90/8a/8d908ae4bb456d5e864b5346affe6070.gif" alt="fondo">
+              <div class="carousel-caption">
+                <h3>Batalla dragon ball z</h3>
+                <button
+                  class="btn btn-primary btn-lg"
+                  [routerLink]="['/juegos/batalla-dbz']"
+                >
+                  Jugar
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#miCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#miCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

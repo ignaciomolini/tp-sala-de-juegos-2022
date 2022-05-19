@@ -1,0 +1,50 @@
+<div class="chat-btn" (click)="mostrarChat = true">
+  <img src="https://cdn-icons-png.flaticon.com/128/589/589708.png" class="chat-icon" alt="chat-icon">
+</div>
+<div [hidden]="!mostrarChat" class="card text-center bg-deg chat-container fuente-chat">
+  <div class="card-header">
+    <span class="text-white">CHAT</span> 
+    <div class="closeIcon" (click)="mostrarChat = false">
+      <img src="https://cdn-icons.flaticon.com/png/512/5461/premium/5461204.png?token=exp=1652983216~hmac=78a7817b90e1dbeae64c881aa92ad3c4" width="25px" alt="closeIcon">
+    </div>
+  </div>
+
+  <div class="card-body scroll" id="card-body" #scrollMe [scrollTop]="chats?.length === 0 ? 0 : scrollMe.scrollHeight">
+    <div *ngFor="let chat of chats" class="chat-log">
+      <div
+        class="chat-log__item"
+        [ngClass]="{ 'chat-log__item--own': usuarioLogeado.uid == chat.uid }"
+      >
+        <p class="chat-log__author mb-0">
+          <span *ngIf="usuarioLogeado.uid != chat.uid" class="badge bg-dark">{{
+            chat.nombre
+          }}</span>
+        </p>
+        <div class="chat-log__message">{{ chat.mensaje }}</div>
+        <p class="chat-log__hora m-0 text-end">
+          {{ chat.hora }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <form class="card-footer input-group text-muted p-0" (ngSubmit)="enviarMensaje()">
+    <input
+      type="text"
+      class="form-control bg-input"
+      placeholder="Ingrese un mensaje"
+      [(ngModel)]="nuevoMensaje"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <div class="input-group-append" (click)="enviarMensaje()">
+      <span class="input-group-text bg-input">
+        <img
+          class="send-icon"
+          src="https://cdn-icons-png.flaticon.com/512/6559/6559443.png"
+          alt="send-icon"
+          width="30vw"
+        />
+      </span>
+    </div>
+  </form>
+</div>

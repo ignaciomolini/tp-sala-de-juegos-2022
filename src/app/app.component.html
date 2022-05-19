@@ -1,4 +1,5 @@
 <div class="fuente-principal">
-  <app-navbar></app-navbar>
+  <app-navbar (usuarioActual)="cargarUsuario($event)"></app-navbar>  
+  <app-chat [usuarioLogeado]="usuarioLogeado" *ngIf="usuarioLogeado"></app-chat>
   <router-outlet></router-outlet>
 </div>
