@@ -7,6 +7,10 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class EncuestaService {
   constructor(private afs: AngularFirestore) { }
 
+  traerTodasLasEncuesta(){
+    return this.afs.collection('encuestas').valueChanges();
+  }
+
   agregarEncuesta(data: any) {
     return this.afs.collection("encuestas").add(data);
   }

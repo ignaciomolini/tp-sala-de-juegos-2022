@@ -42,13 +42,37 @@
             Puntajes
           </a>
           <ul class="dropdown-menu p-0 rounded text-center">
-            <li><a class="dropdown-item py-2" [routerLink]="['/puntajes/ahorcado']">Ahorcado</a></li>
+            <li>
+              <a
+                class="dropdown-item py-2"
+                [routerLink]="['/puntajes/ahorcado']"
+                >Ahorcado</a
+              >
+            </li>
             <li class="dropdown-divider m-0"></li>
-            <li><a class="dropdown-item py-2" [routerLink]="['/puntajes/mayor-menor']">Mayor o menor</a></li>
+            <li>
+              <a
+                class="dropdown-item py-2"
+                [routerLink]="['/puntajes/mayor-menor']"
+                >Mayor o menor</a
+              >
+            </li>
             <li class="dropdown-divider m-0"></li>
-            <li><a class="dropdown-item py-2" [routerLink]="['/puntajes/preguntados']">Preguntados</a></li>
+            <li>
+              <a
+                class="dropdown-item py-2"
+                [routerLink]="['/puntajes/preguntados']"
+                >Preguntados</a
+              >
+            </li>
             <li class="dropdown-divider m-0"></li>
-            <li><a class="dropdown-item py-2" [routerLink]="['/puntajes/batalla-dbz']">Batalla dbz</a></li>
+            <li>
+              <a
+                class="dropdown-item py-2"
+                [routerLink]="['/puntajes/batalla-dbz']"
+                >Batalla dbz</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
@@ -68,6 +92,12 @@
         <ul class="dropdown-menu dropdown-menu-end p-0 text-center">
           <li>
             <p class="text-black m-0 p-2">{{ usuarioLogeado.email }}</p>
+          </li>
+          <li>
+            <div class="dropdown-divider m-0"></div>
+          </li>
+          <li>
+            <a type="button" class="dropdown-item p-2" [routerLink]="['/resultados-encuesta']">Resultados encuesta</a>
           </li>
           <li>
             <div class="dropdown-divider m-0"></div>

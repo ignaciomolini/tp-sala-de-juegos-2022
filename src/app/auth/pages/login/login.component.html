@@ -41,10 +41,13 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-check">     
-                <input class="form-check-input" type="checkbox" name="checkAccRap" id="accRap" 
-                (click)="accesoRapido()"/>    
-                <label class="form-check-label" for="accRap">Acceso rápido</label>
+              <div class="form-check">   
+                <select class="form-select" id="select-usuario" (click)="accesoRapido()">
+                  <option selected>Elegir usuario</option>
+                  <option value="admin">Admin</option>
+                  <option value="jugador1">Jugador1</option>
+                  <option value="jugador2">Jugador2</option>
+                </select>  
               </div>
             </div>
           </div>

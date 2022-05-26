@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { ErrorComponent } from './error/error.component';
+import { PerfilGuard } from './guards/perfil.guard';
 import { HomeComponent } from './home/home.component';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
@@ -21,6 +22,14 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'resultados-encuesta',
+    loadChildren: () => import('./resultados-encuesta/resultados-encuesta.module').then(m => m.ResultadosEncuestaModule),
+    data:{
+      perfil: 'admin'
+    },
+    canActivate: [PerfilGuard]
   },
   {
     path: 'juegos',

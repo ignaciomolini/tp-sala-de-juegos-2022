@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card bg-deg">
+      <div class="card-header text-center bg-deg rounded pt-3">
+        <h2>Puntajes preguntados</h2>
+      </div>
+      <div class="card-body text-center">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Puntaje pagina</th>
+                <th>Que mejorar</th>
+                <th>Juego que mas gusto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let encuesta of encuestas">
+                <td>
+                  {{ encuesta.emailUsuario }}
+                </td>
+                <td>
+                  {{ encuesta.preguntaPuntaje }}
+                </td>
+                <td>
+                    {{ encuesta.preguntaMejorar }}
+                  </td>
+                  <td>
+                    {{ encuesta.preguntaJuego }}
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

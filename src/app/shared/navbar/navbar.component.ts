@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   async logoutUser(){
     try {
       await this.authService.logout();
+      localStorage.removeItem('usuario');
       this.rutas.navigate(['auth/login']);
       this.toastr.success("Sesion cerrada correctamente", "Hasta luego", {
         timeOut: 3000

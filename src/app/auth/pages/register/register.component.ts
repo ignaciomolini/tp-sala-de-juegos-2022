@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Usuario } from 'src/app/models/usuario';
 import { DataLogService } from 'src/app/services/data-log.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-register',
@@ -14,8 +15,8 @@ export class RegisterComponent implements OnInit {
   usuario: Usuario;
 
   constructor(private authService: AuthService, private rutas: Router, private toastr: ToastrService,
-    private dataLog: DataLogService) { 
-      this.usuario = new Usuario('', '', '');
+    private dataLog: DataLogService, private usuarioService: UsuarioService) { 
+      this.usuario = new Usuario('', '', '', '', '');
     }
 
   ngOnInit(): void {
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
   async registerUser() {
     if (this.usuario.nombre.length >= 3) {
       try {
-        await this.authService.register(this.usuario.email, this.usuario.password); 
+        let uid = await (await this.authService.register(this.usuario.email, this.usuario.password)).user?.uid || ''; 
+        await this.usuarioService.agregarUsuario({...this.usuario, uid: uid, perfil: 'jugador'})
         this.authService.modifyUserName(this.usuario.nombre);
         this.toastr.success("Registrado con exito", "OK", {
           timeOut: 3000

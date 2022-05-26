@@ -1,11 +1,15 @@
 export class Usuario {
-    nombre:string;
-    email:string;
-    password:string;
-   
-    public constructor(nombre:string, email:string,password:string){
+    uid: string;
+    nombre: string;
+    email: string;
+    password: string;
+    perfil: string;
+
+    public constructor(uid: string, nombre: string, email: string, password: string, perfil: string) {
+        this.uid = uid;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+        this.perfil = perfil;
     }
 }
