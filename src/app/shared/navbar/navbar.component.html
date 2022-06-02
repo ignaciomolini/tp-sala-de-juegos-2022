@@ -30,10 +30,10 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/quien-soy']">Quien soy?</a>
         </li>
-        <li *ngIf="usuarioLogeado" class="nav-item">
+        <li *ngIf="usuarioLogeado.uid" class="nav-item">
           <a class="nav-link" [routerLink]="['/encuesta']">Encuesta</a>
         </li>
-        <li *ngIf="usuarioLogeado" class="nav-item dropend">
+        <li *ngIf="usuarioLogeado.uid" class="nav-item dropend">
           <a
             class="nav-link dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -79,7 +79,7 @@
 
       <div
         class="navbar-nav ml-auto btn-group"
-        *ngIf="usuarioLogeado; else log"
+        *ngIf="usuarioLogeado.uid; else log"
       >
         <a
           type="button"
@@ -87,7 +87,7 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {{ usuarioLogeado.displayName }}
+          {{ usuarioLogeado.nombre }}
         </a>
         <ul class="dropdown-menu dropdown-menu-end p-0 text-center">
           <li>

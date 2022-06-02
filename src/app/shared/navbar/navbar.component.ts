@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,15 +11,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  usuarioLogeado: any;
-  @Output() usuarioActual = new EventEmitter<any>();
+  usuarioLogeado: Usuario;
+  @Output() usuarioActual = new EventEmitter<Usuario>();
 
   constructor(private authService: AuthService, private rutas: Router, private toastr: ToastrService) {
+    this.usuarioLogeado = new Usuario('', '', '', '', '');
   }
 
   ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe(usuario => {
-      this.usuarioLogeado = usuario;
+    this.authService.getCurrentUser().subscribe((usuario: any) => {
+      this.usuarioLogeado.nombre = usuario?.displayName;
+      this.usuarioLogeado.email = usuario?.email;
+      this.usuarioLogeado.uid = usuario?.uid;
       this.usuarioActual.emit(this.usuarioLogeado);
     })
   }

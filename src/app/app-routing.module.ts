@@ -1,43 +1,45 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EncuestaComponent } from './encuesta/encuesta.component';
-import { ErrorComponent } from './error/error.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/no-auth.guard';
 import { PerfilGuard } from './guards/perfil.guard';
-import { HomeComponent } from './home/home.component';
-import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'quien-soy',
-    component: QuienSoyComponent
+    loadChildren: () => import('./pages/quien-soy/quien-soy.module').then(m => m.QuienSoyModule)
   },
   {
     path: 'encuesta',
-    component: EncuestaComponent
+    loadChildren: () => import('./pages/encuesta/encuesta.module').then(m => m.EncuestaModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule),
+    canActivate: [NoAuthGuard]
   },
   {
     path: 'resultados-encuesta',
-    loadChildren: () => import('./resultados-encuesta/resultados-encuesta.module').then(m => m.ResultadosEncuestaModule),
+    loadChildren: () => import('./pages/resultados-encuesta/resultados-encuesta.module').then(m => m.ResultadosEncuestaModule),
     data:{
       perfil: 'admin'
     },
-    canActivate: [PerfilGuard]
+    canActivate: [AuthGuard, PerfilGuard]
   },
   {
     path: 'juegos',
-    loadChildren: () => import('./juegos/juegos.module').then(m => m.JuegosModule)
+    loadChildren: () => import('./pages/juegos/juegos.module').then(m => m.JuegosModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'puntajes',
-    loadChildren: () => import('./puntajes/puntajes.module').then(m => m.PuntajesModule)
+    loadChildren: () => import('./pages/puntajes/puntajes.module').then(m => m.PuntajesModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',
@@ -46,7 +48,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: ErrorComponent
+    loadChildren: () => import('./pages/error/error.module').then(m => m.ErrorModule)
   }
 ];
 

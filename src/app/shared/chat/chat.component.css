@@ -1,7 +1,7 @@
 .chat-container {
   position: fixed;
   height: 70vh;
-  min-width: 30vw;
+  min-width: 25vw;
   z-index: 9999;
   right: 1rem;
   bottom: 1rem;

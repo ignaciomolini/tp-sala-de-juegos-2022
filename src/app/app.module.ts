@@ -12,8 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
-import { EncuestaModule } from './encuesta/encuesta.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +28,7 @@ import { EncuestaModule } from './encuesta/encuesta.module';
     ToastrModule.forRoot(),
     SweetAlert2Module.forRoot(),
     HttpClientModule,
-    SharedModule,
-    HomeModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

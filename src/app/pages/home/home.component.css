@@ -1,0 +1,33 @@
+.abs-center,
+.card-header,
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abs-center {
+  min-height: 90vh;
+}
+
+.card-header {
+  height: 25vh;
+}
+
+.card-body {
+  height: 15vh;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(204, 179, 255);
+  text-shadow: 2px 2px 2px rgb(136, 73, 255);
+}
+
+.tam-tit {
+  font-size: calc(1em + 3vw);
+}
+
+.tam-text {
+  font-size: calc(0.5em + 2vw);
+}

@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Usuario } from './models/usuario';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'sala-de-juegos';
-  usuarioLogeado: any;
+  usuarioLogeado: Usuario = new Usuario('', '', '', '', '');
 
-  cargarUsuario(usuario: any){
+  cargarUsuario(usuario: Usuario){
     this.usuarioLogeado = usuario;
   }
 }
